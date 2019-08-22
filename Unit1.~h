@@ -22,6 +22,7 @@ __published:	// IDE-managed Components
         TImage *paddelRight;
         TTimer *TimerRightPaddelTop;
         TTimer *TimerRightPaddelBottom;
+        TButton *Button1;
         void __fastcall TimerBallTimer(TObject *Sender);
         void __fastcall TimerLeftPaddelTopTimer(TObject *Sender);
         void __fastcall TimerLeftPaddelBottomTimer(TObject *Sender);

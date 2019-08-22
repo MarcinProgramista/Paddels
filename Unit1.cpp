@@ -20,6 +20,8 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 
 void __fastcall TForm1::TimerBallTimer(TObject *Sender)
 {
+  TimerBall->Enabled = true;
+   ball->Visible = true;
   ball->Left += horizontal;
   ball->Top += vertical;
    //bounce from the top
@@ -38,6 +40,7 @@ void __fastcall TForm1::TimerBallTimer(TObject *Sender)
   {
     TimerBall->Enabled = false;
     ball->Visible = false;
+    Button1->Visible = true;
   }
   else if(ball->Left <= paddelLeft->Left && ball->Top >= paddelLeft->Top -ball->Width/2 &&
           ball->Top < paddelLeft->Top + paddelLeft->Height)
