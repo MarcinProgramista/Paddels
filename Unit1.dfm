@@ -1,8 +1,8 @@
 object Form1: TForm1
-  Left = 397
+  Left = 400
   Top = 151
-  Width = 1132
-  Height = 675
+  Width = 1116
+  Height = 717
   Caption = 'PingPong'
   Color = clBtnFace
   UseDockManager = True
@@ -20,13 +20,13 @@ object Form1: TForm1
   object backGround: TShape
     Left = 0
     Top = 0
-    Width = 1116
-    Height = 636
+    Width = 1100
+    Height = 678
     Align = alClient
     Brush.Color = clGrayText
   end
   object ball: TImage
-    Left = 360
+    Left = 320
     Top = 336
     Width = 32
     Height = 32
@@ -134,8 +134,8 @@ object Form1: TForm1
     Transparent = True
   end
   object paddelLeft: TImage
-    Left = 64
-    Top = 32
+    Left = 56
+    Top = 48
     Width = 20
     Height = 200
     AutoSize = True
@@ -908,21 +908,55 @@ object Form1: TForm1
       FFFF}
     Transparent = True
   end
-  object Button1: TButton
-    Left = 344
-    Top = 480
-    Width = 393
-    Height = 73
-    Caption = 'Nowa gra'
+  object Label1: TLabel
+    Left = 332
+    Top = 128
+    Width = 400
+    Height = 40
+    Align = alCustom
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Label1'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -32
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
+    Visible = False
+  end
+  object Label2: TLabel
+    Left = 336
+    Top = 280
+    Width = 400
+    Height = 40
+    Align = alCustom
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Label2'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -32
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    Visible = False
+  end
+  object Button1: TButton
+    Left = 340
+    Top = 500
+    Width = 400
+    Height = 41
+    Caption = 'Nowa gra'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -23
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 0
     Visible = False
-    OnClick = TimerBallTimer
+    OnClick = Button1Click
   end
   object TimerBall: TTimer
     Interval = 15

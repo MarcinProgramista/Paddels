@@ -135,7 +135,7 @@ object Form1: TForm1
   end
   object paddelLeft: TImage
     Left = 64
-    Top = 192
+    Top = 32
     Width = 20
     Height = 200
     AutoSize = True
@@ -523,7 +523,7 @@ object Form1: TForm1
   end
   object paddelRight: TImage
     Left = 1040
-    Top = 160
+    Top = 408
     Width = 20
     Height = 200
     AutoSize = True
@@ -922,6 +922,7 @@ object Form1: TForm1
     ParentFont = False
     TabOrder = 0
     Visible = False
+    OnClick = TimerBallTimer
   end
   object TimerBall: TTimer
     Interval = 15

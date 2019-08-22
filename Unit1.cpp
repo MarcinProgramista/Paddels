@@ -10,7 +10,7 @@
 TForm1 *Form1;
 int vertical = -8;
 int horizontal = -8;
-
+int sumOfBounds = 0;
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
         : TForm(Owner)
@@ -20,8 +20,8 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 
 void __fastcall TForm1::TimerBallTimer(TObject *Sender)
 {
-  TimerBall->Enabled = true;
-   ball->Visible = true;
+  AnsiString sum_of_bounds;
+
   ball->Left += horizontal;
   ball->Top += vertical;
    //bounce from the top
@@ -34,6 +34,13 @@ void __fastcall TForm1::TimerBallTimer(TObject *Sender)
   {
     TimerBall->Enabled = false;
     ball->Visible = false;
+    ball->Visible = false;
+    Button1->Visible = true;
+    Label1->Caption = "Punkt dla gracza prawego >";
+    Label1->Visible =  true;
+    sum_of_bounds = IntToStr(sumOfBounds);
+    Label2->Caption = "Iloœæ odbiæ: " + sum_of_bounds;
+    Label2->Visible =  true;
   }
   //fault on right side
   if(ball->Left >=  paddelRight->Width +paddelRight->Left + 15)
@@ -41,16 +48,23 @@ void __fastcall TForm1::TimerBallTimer(TObject *Sender)
     TimerBall->Enabled = false;
     ball->Visible = false;
     Button1->Visible = true;
+    Label1->Caption = "< Punkt dla gracza lewego";
+    Label1->Visible =  true;
+    sum_of_bounds = IntToStr(sumOfBounds);
+    Label2->Caption = "Iloœæ odbiæ: " + sum_of_bounds;
+    Label2->Visible =  true;
   }
   else if(ball->Left <= paddelLeft->Left && ball->Top >= paddelLeft->Top -ball->Width/2 &&
           ball->Top < paddelLeft->Top + paddelLeft->Height)
        {
+           sumOfBounds = sumOfBounds + 1;
            if(horizontal < 0 ) horizontal = -horizontal;
            else if(vertical == 0) vertical = -8;
        }
   else if(ball->Left >= paddelRight->Left && ball->Top >= paddelRight->Top -ball->Width/2 &&
            ball->Top < paddelRight->Top + paddelRight->Height)
        {
+         sumOfBounds = sumOfBounds + 1;
          horizontal = -horizontal;
        }
 }
@@ -100,4 +114,20 @@ void __fastcall TForm1::TimerRightPaddelBottomTimer(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+   if( Application->MessageBox("Czy napewno chcesz zacz¹æ od nowa?",
+				"PotwierdŸ", MB_YESNO | MB_ICONQUESTION) == IDYES)
+   {
+      Button1->Visible = false;
+      ball->Left = 320;
+      ball->Top = 280;
+      ball->Visible = true;
+      TimerBall->Enabled = true;
+      Label1->Visible =  false;
+      Label2->Visible =  false;
+      sumOfBounds = 0;
+   }
+}
+//---------------------------------------------------------------------------
 
