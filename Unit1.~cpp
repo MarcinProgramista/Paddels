@@ -9,12 +9,12 @@
 #pragma resource "*.dfm"
 TForm1 *Form1;
 int vertical = -8;
-int horizontal = 8;
+int horizontal = -8;
 
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
         : TForm(Owner)
-{
+{                                                                                
 }
 //---------------------------------------------------------------------------
 
@@ -39,6 +39,12 @@ void __fastcall TForm1::TimerBallTimer(TObject *Sender)
     TimerBall->Enabled = false;
     ball->Visible = false;
   }
+  else if(ball->Left == paddelLeft->Left && ball->Top >= paddelLeft->Top -ball->Width/2 &&
+          ball->Top < paddelLeft->Top + paddelLeft->Height)
+       {
+           if(horizontal < 0 ) horizontal = -horizontal;
+           else if(vertical == 0) vertical = -8;
+       }
 }
 //---------------------------------------------------------------------------
 
@@ -85,4 +91,5 @@ void __fastcall TForm1::TimerRightPaddelBottomTimer(TObject *Sender)
   if(paddelRight->Top + paddelRight->Height < backGround->Height-10 ) paddelRight->Top +=10;
 }
 //---------------------------------------------------------------------------
+
 

@@ -26,8 +26,8 @@ object Form1: TForm1
     Brush.Color = clGrayText
   end
   object ball: TImage
-    Left = 368
-    Top = 488
+    Left = 360
+    Top = 336
     Width = 32
     Height = 32
     AutoSize = True
@@ -134,8 +134,8 @@ object Form1: TForm1
     Transparent = True
   end
   object paddelLeft: TImage
-    Left = 56
-    Top = 240
+    Left = 64
+    Top = 136
     Width = 20
     Height = 200
     AutoSize = True
@@ -522,7 +522,7 @@ object Form1: TForm1
   end
   object paddelRight: TImage
     Left = 992
-    Top = 176
+    Top = 192
     Width = 20
     Height = 200
     AutoSize = True

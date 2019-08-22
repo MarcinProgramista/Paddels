@@ -39,11 +39,16 @@ void __fastcall TForm1::TimerBallTimer(TObject *Sender)
     TimerBall->Enabled = false;
     ball->Visible = false;
   }
-  else if(ball->Left == paddelLeft->Left && ball->Top >= paddelLeft->Top -ball->Width/2 &&
+  else if(ball->Left <= paddelLeft->Left && ball->Top >= paddelLeft->Top -ball->Width/2 &&
           ball->Top < paddelLeft->Top + paddelLeft->Height)
        {
            if(horizontal < 0 ) horizontal = -horizontal;
            else if(vertical == 0) vertical = -8;
+       }
+  else if(ball->Left >= paddelRight->Left && ball->Top >= paddelRight->Top -ball->Width/2 &&
+           ball->Top < paddelRight->Top + paddelRight->Height)
+       {
+         horizontal = -horizontal;
        }
 }
 //---------------------------------------------------------------------------
