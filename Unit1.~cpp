@@ -32,3 +32,32 @@ void __fastcall TForm1::TimerBallTimer(TObject *Sender)
   }
 }
 //---------------------------------------------------------------------------
+
+void __fastcall TForm1::TimerLeftPaddelTopTimer(TObject *Sender)
+{
+  paddelLeft->Top -=10;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::TimerLeftPaddelBottomTimer(TObject *Sender)
+{
+  paddelLeft->Top +=10;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
+      TShiftState Shift)
+{
+     if (Key == 'A' || Key == 'a' ) TimerLeftPaddelTop->Enabled = true;
+     if (Key == 'Z' || Key == 'z' ) TimerLeftPaddelBottom->Enabled = true;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::FormKeyUp(TObject *Sender, WORD &Key,
+      TShiftState Shift)
+{
+     if (Key == 'A' || Key == 'a' ) TimerLeftPaddelTop->Enabled = false;
+     if (Key == 'Z' || Key == 'z' ) TimerLeftPaddelBottom->Enabled = false;
+}
+//---------------------------------------------------------------------------
+
