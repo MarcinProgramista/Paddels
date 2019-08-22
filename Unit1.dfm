@@ -1,8 +1,8 @@
 object Form1: TForm1
-  Left = 400
-  Top = 151
-  Width = 1116
-  Height = 717
+  Left = 508
+  Top = 345
+  Width = 1110
+  Height = 559
   Caption = 'PingPong'
   Color = clBtnFace
   UseDockManager = True
@@ -20,14 +20,14 @@ object Form1: TForm1
   object backGround: TShape
     Left = 0
     Top = 0
-    Width = 1100
-    Height = 678
+    Width = 1094
+    Height = 520
     Align = alClient
-    Brush.Color = clGrayText
+    Brush.Color = clInactiveCaption
   end
   object ball: TImage
-    Left = 320
-    Top = 336
+    Left = 504
+    Top = 84
     Width = 32
     Height = 32
     AutoSize = True
@@ -135,7 +135,7 @@ object Form1: TForm1
   end
   object paddelLeft: TImage
     Left = 56
-    Top = 48
+    Top = 0
     Width = 20
     Height = 200
     AutoSize = True
@@ -522,8 +522,8 @@ object Form1: TForm1
     OnClick = TimerBallTimer
   end
   object paddelRight: TImage
-    Left = 1040
-    Top = 408
+    Left = 1016
+    Top = 0
     Width = 20
     Height = 200
     AutoSize = True
@@ -944,7 +944,7 @@ object Form1: TForm1
   end
   object Button1: TButton
     Left = 340
-    Top = 500
+    Top = 388
     Width = 400
     Height = 41
     Caption = 'Nowa gra'
@@ -959,35 +959,35 @@ object Form1: TForm1
     OnClick = Button1Click
   end
   object TimerBall: TTimer
-    Interval = 15
+    Interval = 20
     OnTimer = TimerBallTimer
     Left = 8
     Top = 16
   end
   object TimerLeftPaddelTop: TTimer
     Enabled = False
-    Interval = 20
+    Interval = 17
     OnTimer = TimerLeftPaddelTopTimer
     Left = 8
     Top = 56
   end
   object TimerLeftPaddelBottom: TTimer
     Enabled = False
-    Interval = 20
+    Interval = 17
     OnTimer = TimerLeftPaddelBottomTimer
     Left = 48
     Top = 56
   end
   object TimerRightPaddelTop: TTimer
     Enabled = False
-    Interval = 20
+    Interval = 17
     OnTimer = TimerRightPaddelTopTimer
     Left = 992
     Top = 64
   end
   object TimerRightPaddelBottom: TTimer
     Enabled = False
-    Interval = 20
+    Interval = 17
     OnTimer = TimerRightPaddelBottomTimer
     Left = 1032
     Top = 64

@@ -8,9 +8,11 @@
 #pragma package(smart_init)
 #pragma resource "*.dfm"
 TForm1 *Form1;
-int vertical = -8;
+int vertical = 0;
 int horizontal = -8;
 int sumOfBounds = 0;
+int sumOFPointsLeftPlayer = 0;
+int sumOFPointsRightPlayer = 0;
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
         : TForm(Owner)
@@ -43,7 +45,7 @@ void __fastcall TForm1::TimerBallTimer(TObject *Sender)
     Label2->Visible =  true;
   }
   //fault on right side
-  if(ball->Left >=  paddelRight->Width +paddelRight->Left + 15)
+  if(ball->Left >=  paddelRight->Width +paddelRight->Left + 10)
   {
     TimerBall->Enabled = false;
     ball->Visible = false;
@@ -57,14 +59,26 @@ void __fastcall TForm1::TimerBallTimer(TObject *Sender)
   else if(ball->Left <= paddelLeft->Left && ball->Top >= paddelLeft->Top -ball->Width/2 &&
           ball->Top < paddelLeft->Top + paddelLeft->Height)
        {
+        if (ball->Top == paddelLeft->Top + paddelLeft->Height/2 - ball->Width/2 )
+        {
+          vertical -=9;
+          TimerBall->Interval --;
+        }
            sumOfBounds = sumOfBounds + 1;
+            TimerBall->Interval--;
            if(horizontal < 0 ) horizontal = -horizontal;
            else if(vertical == 0) vertical = -8;
        }
-  else if(ball->Left >= paddelRight->Left && ball->Top >= paddelRight->Top -ball->Width/2 &&
+  else if(ball->Left >= paddelRight->Left-16 && ball->Top >= paddelRight->Top -ball->Width/2 &&
            ball->Top < paddelRight->Top + paddelRight->Height)
        {
+        if (ball->Top == paddelRight->Top + paddelRight->Height/2 - ball->Width/2 )
+        {
+          vertical +=9;
+          TimerBall->Interval--;
+        }
          sumOfBounds = sumOfBounds + 1;
+          TimerBall->Interval--;
          horizontal = -horizontal;
        }
 }
