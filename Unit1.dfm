@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 309
-  Top = 148
-  Width = 1109
+  Left = 397
+  Top = 151
+  Width = 1089
   Height = 675
   Caption = 'PingPong'
   Color = clBtnFace
@@ -11,12 +11,14 @@ object Form1: TForm1
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  OnKeyDown = FormKeyDown
+  OnKeyUp = FormKeyUp
   PixelsPerInch = 96
   TextHeight = 13
   object backGround: TShape
     Left = 0
     Top = 0
-    Width = 1093
+    Width = 1073
     Height = 636
     Align = alClient
     Brush.Color = clGrayText
@@ -521,5 +523,19 @@ object Form1: TForm1
     OnTimer = TimerBallTimer
     Left = 8
     Top = 16
+  end
+  object TimerLeftPaddelTop: TTimer
+    Enabled = False
+    Interval = 20
+    OnTimer = TimerLeftPaddelTopTimer
+    Left = 8
+    Top = 56
+  end
+  object TimerLeftPaddelBottom: TTimer
+    Enabled = False
+    Interval = 20
+    OnTimer = TimerLeftPaddelBottomTimer
+    Left = 48
+    Top = 56
   end
 end

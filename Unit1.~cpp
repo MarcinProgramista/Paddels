@@ -25,5 +25,10 @@ void __fastcall TForm1::TimerBallTimer(TObject *Sender)
 
   if(ball->Top-5 <= backGround->Top) vertical = -vertical;
   if(ball->Top + ball->Width + 5 >= backGround->Height) vertical = -vertical;
+  if(ball->Left <=  paddelLeft->Width + 15)
+  {
+    TimerBall->Enabled = false;
+    ball->Visible = false;
+  }
 }
 //---------------------------------------------------------------------------
