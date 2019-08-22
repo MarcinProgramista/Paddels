@@ -59,6 +59,8 @@ void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key,
 {
      if (Key == 'A' || Key == 'a' ) TimerLeftPaddelTop->Enabled = true;
      if (Key == 'Z' || Key == 'z' ) TimerLeftPaddelBottom->Enabled = true;
+     if (Key == VK_UP ) TimerRightPaddelTop->Enabled = true;
+     if (Key == VK_DOWN ) TimerRightPaddelBottom->Enabled = true;
 }
 //---------------------------------------------------------------------------
 
@@ -67,6 +69,20 @@ void __fastcall TForm1::FormKeyUp(TObject *Sender, WORD &Key,
 {
      if (Key == 'A' || Key == 'a' ) TimerLeftPaddelTop->Enabled = false;
      if (Key == 'Z' || Key == 'z' ) TimerLeftPaddelBottom->Enabled = false;
+     if (Key == VK_UP ) TimerRightPaddelTop->Enabled = false;
+     if (Key == VK_DOWN ) TimerRightPaddelBottom->Enabled = false;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::TimerRightPaddelTopTimer(TObject *Sender)
+{
+   if(paddelRight->Top >10 )paddelRight->Top -=10;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::TimerRightPaddelBottomTimer(TObject *Sender)
+{
+  if(paddelRight->Top + paddelRight->Height < backGround->Height-10 ) paddelRight->Top +=10;
 }
 //---------------------------------------------------------------------------
 

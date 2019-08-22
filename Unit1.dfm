@@ -926,4 +926,18 @@ object Form1: TForm1
     Left = 48
     Top = 56
   end
+  object TimerRightPaddelTop: TTimer
+    Enabled = False
+    Interval = 20
+    OnTimer = TimerRightPaddelTopTimer
+    Left = 992
+    Top = 64
+  end
+  object TimerRightPaddelBottom: TTimer
+    Enabled = False
+    Interval = 20
+    OnTimer = TimerRightPaddelBottomTimer
+    Left = 1032
+    Top = 64
+  end
 end

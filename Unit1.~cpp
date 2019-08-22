@@ -8,8 +8,8 @@
 #pragma package(smart_init)
 #pragma resource "*.dfm"
 TForm1 *Form1;
-int vertical = 8;
-int horizontal = -8;
+int vertical = -8;
+int horizontal = 8;
 
 //---------------------------------------------------------------------------
 __fastcall TForm1::TForm1(TComponent* Owner)
@@ -22,10 +22,19 @@ void __fastcall TForm1::TimerBallTimer(TObject *Sender)
 {
   ball->Left += horizontal;
   ball->Top += vertical;
-
+   //bounce from the top
   if(ball->Top-5 <= backGround->Top) vertical = -vertical;
+  //bounce from the bottom
   if(ball->Top + ball->Width + 5 >= backGround->Height) vertical = -vertical;
+
+  //fault on left side
   if(ball->Left <=  paddelLeft->Width + 15)
+  {
+    TimerBall->Enabled = false;
+    ball->Visible = false;
+  }
+  //fault on right side
+  if(ball->Left >=  paddelRight->Width +paddelRight->Left + 15)
   {
     TimerBall->Enabled = false;
     ball->Visible = false;
