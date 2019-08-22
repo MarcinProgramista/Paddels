@@ -35,13 +35,13 @@ void __fastcall TForm1::TimerBallTimer(TObject *Sender)
 
 void __fastcall TForm1::TimerLeftPaddelTopTimer(TObject *Sender)
 {
-  paddelLeft->Top -=10;
+  if(paddelLeft->Top >10 )paddelLeft->Top -=10;
 }
 //---------------------------------------------------------------------------
 
 void __fastcall TForm1::TimerLeftPaddelBottomTimer(TObject *Sender)
 {
-  paddelLeft->Top +=10;
+  if(paddelLeft->Top + paddelLeft->Height < backGround->Height-10 ) paddelLeft->Top +=10;
 }
 //---------------------------------------------------------------------------
 
