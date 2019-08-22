@@ -6,6 +6,7 @@ object Form1: TForm1
   Caption = 'PingPong'
   Color = clBtnFace
   UseDockManager = True
+  DockSite = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -925,5 +926,19 @@ object Form1: TForm1
     OnTimer = TimerLeftPaddelBottomTimer
     Left = 48
     Top = 56
+  end
+  object TimerRightPaddelTop: TTimer
+    Enabled = False
+    Interval = 20
+    OnTimer = TimerRightPaddelTopTimer
+    Left = 992
+    Top = 64
+  end
+  object TimerRightPaddelBottom: TTimer
+    Enabled = False
+    Interval = 20
+    OnTimer = TimerRightPaddelBottomTimer
+    Left = 1032
+    Top = 64
   end
 end

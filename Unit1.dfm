@@ -6,6 +6,7 @@ object Form1: TForm1
   Caption = 'PingPong'
   Color = clBtnFace
   UseDockManager = True
+  DockSite = True
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
@@ -25,8 +26,8 @@ object Form1: TForm1
     Brush.Color = clGrayText
   end
   object ball: TImage
-    Left = 224
-    Top = 192
+    Left = 368
+    Top = 488
     Width = 32
     Height = 32
     AutoSize = True
@@ -134,7 +135,7 @@ object Form1: TForm1
   end
   object paddelLeft: TImage
     Left = 56
-    Top = 176
+    Top = 240
     Width = 20
     Height = 200
     AutoSize = True
