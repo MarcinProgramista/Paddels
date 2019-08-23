@@ -1,8 +1,8 @@
 object Form1: TForm1
   Left = 508
-  Top = 345
-  Width = 1110
-  Height = 559
+  Top = 380
+  Width = 1185
+  Height = 552
   Caption = 'PingPong'
   Color = clBtnFace
   UseDockManager = True
@@ -13,6 +13,7 @@ object Form1: TForm1
   Font.Name = 'MS Sans Serif'
   Font.Style = []
   OldCreateOrder = False
+  OnClose = FormClose
   OnKeyDown = FormKeyDown
   OnKeyUp = FormKeyUp
   PixelsPerInch = 96
@@ -20,14 +21,14 @@ object Form1: TForm1
   object backGround: TShape
     Left = 0
     Top = 0
-    Width = 1094
-    Height = 520
+    Width = 1169
+    Height = 513
     Align = alClient
     Brush.Color = clInactiveCaption
   end
   object ball: TImage
-    Left = 504
-    Top = 84
+    Left = 520
+    Top = 244
     Width = 32
     Height = 32
     AutoSize = True
@@ -134,8 +135,8 @@ object Form1: TForm1
     Transparent = True
   end
   object paddelLeft: TImage
-    Left = 56
-    Top = 0
+    Left = 50
+    Top = 136
     Width = 20
     Height = 200
     AutoSize = True
@@ -519,11 +520,10 @@ object Form1: TForm1
       1E17291E17291E17291E17291E17291E17291E17291E17291E17291E17291EFF
       FFFF}
     Transparent = True
-    OnClick = TimerBallTimer
   end
   object paddelRight: TImage
     Left = 1016
-    Top = 0
+    Top = 136
     Width = 20
     Height = 200
     AutoSize = True
@@ -923,6 +923,7 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
+    Transparent = True
     Visible = False
   end
   object Label2: TLabel
@@ -940,9 +941,76 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
+    Transparent = True
     Visible = False
   end
+  object Label3: TLabel
+    Left = 332
+    Top = 208
+    Width = 405
+    Height = 40
+    Align = alCustom
+    Alignment = taCenter
+    AutoSize = False
+    Caption = 'Label1'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -32
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    Transparent = True
+    Visible = False
+  end
+  object Label4: TLabel
+    Left = 312
+    Top = 48
+    Width = 424
+    Height = 46
+    Align = alCustom
+    Alignment = taCenter
+    Caption = 'Zagrajmy w PingPonga!'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -40
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    Transparent = True
+  end
   object Button1: TButton
+    Left = 340
+    Top = 388
+    Width = 400
+    Height = 41
+    Caption = 'Nowa gra'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlue
+    Font.Height = -23
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    Visible = False
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 416
+    Top = 336
+    Width = 249
+    Height = 41
+    Caption = 'Nast'#281'pna runda'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clTeal
+    Font.Height = -23
+    Font.Name = 'MS Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    Visible = False
+    OnClick = Button2Click
+  end
+  object Button3: TButton
     Left = 340
     Top = 388
     Width = 400
@@ -954,40 +1022,39 @@ object Form1: TForm1
     Font.Name = 'MS Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabOrder = 0
-    Visible = False
-    OnClick = Button1Click
+    TabOrder = 2
+    OnClick = Button3Click
   end
   object TimerBall: TTimer
-    Interval = 20
+    Interval = 17
     OnTimer = TimerBallTimer
     Left = 8
     Top = 16
   end
   object TimerLeftPaddelTop: TTimer
     Enabled = False
-    Interval = 17
+    Interval = 14
     OnTimer = TimerLeftPaddelTopTimer
     Left = 8
     Top = 56
   end
   object TimerLeftPaddelBottom: TTimer
     Enabled = False
-    Interval = 17
+    Interval = 14
     OnTimer = TimerLeftPaddelBottomTimer
     Left = 48
     Top = 56
   end
   object TimerRightPaddelTop: TTimer
     Enabled = False
-    Interval = 17
+    Interval = 14
     OnTimer = TimerRightPaddelTopTimer
     Left = 992
     Top = 64
   end
   object TimerRightPaddelBottom: TTimer
     Enabled = False
-    Interval = 17
+    Interval = 14
     OnTimer = TimerRightPaddelBottomTimer
     Left = 1032
     Top = 64
